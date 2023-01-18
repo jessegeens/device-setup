@@ -1,0 +1,5 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.fontFamily": "JetbrainsMono Nerd Font Mono",
+    "terminal.integrated.customGlyphs": false
+}
