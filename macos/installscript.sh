@@ -21,6 +21,9 @@ packages_list=(
   curlie
   dog
   ansible
+  gh
+  helm
+  watch
 )
 
 
@@ -36,6 +39,8 @@ cask_list=(
   thunderbird
   flutter
   android-studio
+  iterm2
+  drawio
 )
 
 for cask in "${cask_list[@]}"
@@ -64,10 +69,17 @@ done
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Set aliases
-cat <<- 'EOF' > ~/.aliases
-alias tf=terraform
-alias k=kubectl
-alias nv=nvim
-EOF
+cp ../common/.aliases ~/.aliases
 
-echo "source ~/.alias" >> ~/.zshrc
+# Set nvim config
+mkdir ~/.config
+mkdir ~/.config/nvim
+cp ../common/init.vim ~/.config/nvim/init.vim
+
+# Set zsh config 
+cp ../common/.zshrc ~/.zshrc
+
+source ~/.zshrc
+
+# Set vscode config
+
